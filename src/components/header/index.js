@@ -9,6 +9,10 @@ const Header = () => {
 				src={logo}
 				className={styles.logo}
 			/>
+			<div className={styles.buttons}>
+				<button className={styles.button}>Contact</button>
+				<button className={styles.button}>About</button>
+			</div>
 		</div>
 	);
 };

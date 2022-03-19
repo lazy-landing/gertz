@@ -1,5 +1,7 @@
 .header {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   height: 86px;
   left: 0;
   top: 0;
@@ -10,4 +12,30 @@
   height: 80%;
   padding-left: 20px;
   padding-top: 20px;
+}
+
+@media only screen and (max-width: 730px) {
+  .buttons {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 730px) {
+  .buttons {
+    display: flex;
+    margin: 20px;
+  }
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: lightgrey;
+  margin: 10px;
+  font-size: 20px;
+
+  &:hover {
+    color: white;
+  }
 }
