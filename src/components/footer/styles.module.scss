@@ -1,0 +1,15 @@
+.footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #888;
+}
+
+.copyright {
+  color: white;
+}
