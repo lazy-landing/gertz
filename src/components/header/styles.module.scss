@@ -8,10 +8,21 @@
   width: 100%;
 }
 
-.logo {
+.logo-container {
   height: 80%;
   padding-left: 20px;
   padding-top: 20px;
+}
+
+.logo {
+  cursor: pointer;
+  transition: background 2s;
+  height: 100%;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: #432f3f;
+  }
 }
 
 @media only screen and (max-width: 730px) {
