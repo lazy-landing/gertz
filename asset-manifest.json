@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/gertz/static/css/main.13f25e9b.css",
+    "main.js": "/gertz/static/js/main.7a0204fd.js",
+    "static/js/787.f79be05c.chunk.js": "/gertz/static/js/787.f79be05c.chunk.js",
+    "static/media/logo.png": "/gertz/static/media/logo.6bef587ab524ddfa2cd5.png",
+    "index.html": "/gertz/index.html",
+    "main.13f25e9b.css.map": "/gertz/static/css/main.13f25e9b.css.map",
+    "main.7a0204fd.js.map": "/gertz/static/js/main.7a0204fd.js.map",
+    "787.f79be05c.chunk.js.map": "/gertz/static/js/787.f79be05c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.13f25e9b.css",
+    "static/js/main.7a0204fd.js"
+  ]
+}
