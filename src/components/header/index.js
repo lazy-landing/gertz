@@ -21,13 +21,13 @@ const Header = () => {
 					className={styles.button}
 					onClick={() => navigate('/contact')}
 				>
-					Contact
+					Contact Us
 				</button>
 				<button
 					className={styles.button}
 					onClick={() => navigate('/about')}
 				>
-					About
+					About Us
 				</button>
 			</div>
 		</div>
