@@ -3,7 +3,6 @@ import styles from './styles.module.scss';
 const Contact = () => {
 	return (
 		<div className={styles.main}>
-			<h2 className={styles.title}>Contact US</h2>
 			<form>
 				<div className={styles['not-required-area']}>
 					<input
