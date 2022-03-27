@@ -3,10 +3,10 @@ import emailjs from 'emailjs-com';
 import isValidEmail from './isValidEmail';
 import styles from './styles.module.scss';
 
-const serviceId = process.env.SERVICE_ID;
-const autoReplayTemplateId = process.env.AUTO_REPLAY_TEMPLATE_ID;
-const notifyTemplateId = process.env.NOTIFY_TEMPLATE_ID;
-const userId = process.env.USER_ID;
+const serviceId = process.env.REACT_APP_SERVICE_ID;
+const autoReplayTemplateId = process.env.REACT_APP_AUTO_REPLAY_TEMPLATE_ID;
+const notifyTemplateId = process.env.REACT_APP_NOTIFY_TEMPLATE_ID;
+const userId = process.env.REACT_APP_USER_ID;
 
 const Contact = () => {
 	const [firstName, setFirstName] = useState('');
