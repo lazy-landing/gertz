@@ -1,6 +1,10 @@
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 import logo from './logo.png';
+
+const getActiveButtonStyle = (path) => {
+	return path === window.location.pathname ? styles.active : '';
+};
 
 const Header = () => {
 	const navigate = useNavigate();
@@ -18,13 +22,13 @@ const Header = () => {
 			</div>
 			<div className={styles.buttons}>
 				<button
-					className={styles.button}
+					className={`${styles.button} ${getActiveButtonStyle('/contact')}`}
 					onClick={() => navigate('/contact')}
 				>
 					Contact Us
 				</button>
 				<button
-					className={styles.button}
+					className={`${styles.button} ${getActiveButtonStyle('/about')}`}
 					onClick={() => navigate('/about')}
 				>
 					About Us
