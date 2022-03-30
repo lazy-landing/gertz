@@ -14,7 +14,9 @@ const About = () => {
 	return (
 		<div className={styles.main}>
 			<div className={styles['title-wrapper']}>
-				<p>We are a team specializing in building web apps using modern web technologies:</p>
+				<p>We are a team of software developers, a small but motivated team
+					specializing in building web apps using modern web technologies.</p>
+				<p>We always keep an eye on the latest trends in the tech world and put our customers’ wishes first.</p>
 			</div>
 			<div className={styles['media-wrapper']}>
 				<div><img alt='HTML5' className={styles.icon} src={htmlIcon} /></div>
@@ -27,16 +29,13 @@ const About = () => {
 				<div><img alt='NPM' className={styles.icon} src={npmIcon} /></div>
 			</div>
 			<div className={styles['title-wrapper']}>
-				<p>Also, we are covering functionality by UI autotests, Unit tests, Integration tests using:</p>
+				<p>In addition to software development, we provide full-cycle testing activities:
+					test strategy, test plan, test cases design and execution.</p>
+				<p>Test activities: web app testing, manual testing, automated testing, functional testing, integration testing.</p>
 			</div>
 			<div className={styles['media-wrapper']}>
 				<div><img alt='Java' className={styles.icon} src={javaIcon} /></div>
 				<div><img alt='Selenium' className={styles.icon} src={seleniumIcon} /></div>
-			</div>
-			<div className={styles['text-wrapper']}>
-				<p className={styles.text}>
-					{'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.'}
-				</p>
 			</div>
 		</div>
 	);
