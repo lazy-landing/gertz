@@ -1,45 +1,10 @@
+// big screen
 @media only screen and (min-width: 850px) {
   .main {
     display: flex;
     padding-top: 50px;
   }
-}
 
-@media only screen and (max-width: 850px) {
-  .main {
-    padding-top: 50px;
-  }
-}
-
-.hidden {
-  display: none;
-}
-
-@media only screen and (max-width: 850px) {
-  form {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .input-margin {
-    margin: 3px;
-  }
-
-  .sent-email {
-    color: seagreen;
-    margin: 10px;
-    font-size: 11px;
-  }
-
-  .warning {
-    color: red;
-    margin: 0 0 0 10px;
-    font-size: 11px;
-  }
-}
-
-@media only screen and (min-width: 850px) {
   form {
     width: 60%;
     margin-left: auto;
@@ -61,6 +26,83 @@
     margin: 0 0 0 10px;
     font-size: 14px;
   }
+
+  .address {
+    width: 25%;
+    color: white;
+    font-size: 15px;
+    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+    margin-left: auto;
+
+    & div {
+      margin-bottom: 10px;
+    }
+
+    & h4 {
+      margin: 0;
+    }
+
+    & a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+// small screen
+@media only screen and (max-width: 850px) {
+  .main {
+    padding-top: 50px;
+  }
+
+  form {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input-margin {
+    margin: 3px;
+  }
+
+  .sent-email {
+    color: seagreen;
+    margin: 10px;
+    font-size: 11px;
+  }
+
+  .warning {
+    color: red;
+    margin: 0 0 0 10px;
+    font-size: 11px;
+  }
+
+  .address {
+    color: white;
+    font-size: 15px;
+    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+
+    & div {
+      margin-bottom: 10px;
+    }
+
+    & h4 {
+      margin: 0;
+    }
+
+    & a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .user-data {
@@ -120,56 +162,4 @@
 .input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 100px #131313 inset;
   -webkit-text-fill-color: white;
-}
-
-@media only screen and (min-width: 850px) {
-  .address {
-    width: 25%;
-    color: white;
-    font-size: 15px;
-    text-shadow: 0.07em 0 black,
-    0 0.07em black,
-    -0.07em 0 black,
-    0 -0.07em black;
-
-    & div {
-      margin-bottom: 10px;
-    }
-
-    & h4 {
-      margin: 0;
-    }
-
-    & a {
-      text-decoration: none;
-      color: white;
-    }
-  }
-}
-
-@media only screen and (max-width: 850px) {
-  .address {
-    color: white;
-    font-size: 15px;
-    text-shadow: 0.07em 0 black,
-    0 0.07em black,
-    -0.07em 0 black,
-    0 -0.07em black;
-    margin-top: 10px;
-    margin-left: auto;
-    max-width: 90%;
-
-    & div {
-      margin-bottom: 10px;
-    }
-
-    & h4 {
-      margin: 0;
-    }
-
-    & a {
-      text-decoration: none;
-      color: white;
-    }
-  }
 }

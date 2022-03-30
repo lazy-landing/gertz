@@ -84,6 +84,12 @@ const Contact = () => {
 
 	return (
 		<div className={styles.main}>
+			<address className={styles.address}>
+				<h4>We are located in:</h4>
+				<div>Odesa, Ukraine</div>
+				<h4>You can contact us directly here:</h4>
+				<a href='mailto:gertzservice@gmail.com'>gertzservice@gmail.com</a>
+			</address>
 			<form>
 				<div className={emailSent ? styles['sent-email'] : styles.hidden}>
 					Thank you for your message, we will be in touch!
@@ -135,12 +141,6 @@ const Contact = () => {
 					</button>
 				</div>
 			</form>
-			<address className={styles.address}>
-				<h4>We are located in:</h4>
-				<div>Odesa, Ukraine</div>
-				<h4>You can contact us directly here:</h4>
-				<a href='mailto:gertzservice@gmail.com'>gertzservice@gmail.com</a>
-			</address>
 		</div>
 	);
 };
