@@ -1,8 +1,7 @@
 // big screen
 @media only screen and (min-width: 850px) {
-  .main {
-    display: flex;
-    padding-top: 50px;
+  .contact {
+    height: 100%;
   }
 
   form {
@@ -28,14 +27,15 @@
   }
 
   .address {
-    width: 25%;
+    display: flex;
+    justify-content: center;
     color: white;
     font-size: 15px;
     text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
-    margin-left: auto;
+    margin: auto;
 
-    & div {
-      margin-bottom: 10px;
+    & .address-section {
+      margin: 20px 20px 20px;
     }
 
     & h4 {
@@ -51,8 +51,9 @@
 
 // small screen
 @media only screen and (max-width: 850px) {
-  .main {
-    padding-top: 50px;
+  .contact {
+    height: 100%;
+    padding-top: 10px;
   }
 
   form {
@@ -81,9 +82,7 @@
     color: white;
     font-size: 15px;
     text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 50px auto 10px;
     max-width: 90%;
 
     & div {

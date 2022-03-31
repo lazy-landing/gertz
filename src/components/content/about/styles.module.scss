@@ -1,8 +1,10 @@
-.main {
-  padding-top: 50px;
-}
-
+// small screen
 @media only screen and (max-width: 850px) {
+  .about {
+    height: 100%;
+    padding-top: 50px;
+  }
+
   .title-wrapper {
     max-width: 90%;
     margin-left: auto;
@@ -31,9 +33,15 @@
   }
 }
 
+// big screen
 @media only screen and (min-width: 850px) {
+  .about {
+    height: 100%;
+    padding-top: 50px;
+  }
+
   .title-wrapper {
-    max-width: 60%;
+    max-width: 70%;
     margin-left: auto;
     margin-right: auto;
 
@@ -50,7 +58,7 @@
 
   .media-wrapper {
     display: flex;
-    max-width: 60%;
+    max-width: 70%;
     margin-left: auto;
     margin-right: auto;
   }

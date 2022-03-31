@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import isValidEmail from './isValidEmail';
 import styles from './styles.module.scss';
@@ -9,6 +10,8 @@ const notifyTemplateId = process.env.REACT_APP_NOTIFY_TEMPLATE_ID;
 const userId = process.env.REACT_APP_USER_ID;
 
 const Contact = () => {
+	const ref = useRef(null);
+	const { pathname } = useLocation();
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
 	const [email, setEmail] = useState('');
@@ -18,6 +21,12 @@ const Contact = () => {
 	const [showEmailWarning, setShowEmailWarning] = useState(false);
 	const [showEmailNotValidWarning, setShowEmailNotValidWarning] = useState(false);
 	const [showMessageWarning, setShowMessageWarning] = useState(false);
+
+	useEffect(() => {
+		if (pathname === '/contact') {
+			ref?.current?.scrollIntoView();
+		}
+	}, [pathname]);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -83,12 +92,16 @@ const Contact = () => {
 	};
 
 	return (
-		<div className={styles.main}>
+		<div ref={ref} className={styles.contact}>
 			<address className={styles.address}>
-				<h4>We are located in:</h4>
-				<div>Odesa, Ukraine</div>
-				<h4>You can contact us directly here:</h4>
-				<a href='mailto:gertzservice@gmail.com'>gertzservice@gmail.com</a>
+				<div className={styles['address-section']}>
+					<h4>We are located in:</h4>
+					<div>Odesa, Ukraine</div>
+				</div>
+				<div className={styles['address-section']}>
+					<h4>You can contact us directly here:</h4>
+					<a href='mailto:gertzservice@gmail.com'>gertzservice@gmail.com</a>
+				</div>
 			</address>
 			<form>
 				<div className={emailSent ? styles['sent-email'] : styles.hidden}>

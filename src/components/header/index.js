@@ -22,16 +22,16 @@ const Header = () => {
 			</div>
 			<div className={styles.buttons}>
 				<button
-					className={`${styles.button} ${getActiveButtonStyle('/contact')}`}
-					onClick={() => navigate('/contact')}
-				>
-					Contact Us
-				</button>
-				<button
 					className={`${styles.button} ${getActiveButtonStyle('/about')}`}
 					onClick={() => navigate('/about')}
 				>
 					About Us
+				</button>
+				<button
+					className={`${styles.button} ${getActiveButtonStyle('/contact')}`}
+					onClick={() => navigate('/contact')}
+				>
+					Contact Us
 				</button>
 			</div>
 		</div>

@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import styles from './styles.module.scss';
 import htmlIcon from './icons/HTML5.svg';
 import css3Icon from './icons/CSS3.svg';
@@ -11,8 +13,18 @@ import javaIcon from './icons/Java.svg';
 import seleniumIcon from './icons/Selenium.svg';
 
 const About = () => {
+
+	const ref = useRef(null);
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		if (pathname === '/about') {
+			ref?.current?.scrollIntoView();
+		}
+	}, [pathname]);
+
 	return (
-		<div className={styles.main}>
+		<div ref={ref} className={styles.about}>
 			<div className={styles['title-wrapper']}>
 				<p>We are a team of software developers, a small but motivated team
 					specializing in building web apps using modern web technologies.</p>
