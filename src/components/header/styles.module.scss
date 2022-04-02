@@ -2,16 +2,16 @@
   position: fixed;
   display: flex;
   justify-content: space-between;
-  height: 86px;
+  align-items: center;
+  height: 10%;
+  width: 100%;
   left: 0;
   top: 0;
-  width: 100%;
 }
 
 .logo-container {
   height: 80%;
-  padding-left: 20px;
-  padding-top: 20px;
+  padding-left: 1%;
 }
 
 .logo {
@@ -25,12 +25,27 @@
   }
 }
 
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: lightgrey;
+  margin: 10px;
+  font-size: 20px;
+}
+
+// small screen
 @media only screen and (max-width: 730px) {
   .buttons {
     display: flex;
   }
+
+  .button {
+    font-size: 15px;
+  }
 }
 
+// big screen
 @media only screen and (min-width: 730px) {
   .buttons {
     display: flex;
@@ -40,15 +55,6 @@
   .button:hover {
     color: white;
   }
-}
-
-.button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: lightgrey;
-  margin: 10px;
-  font-size: 20px;
 }
 
 .active {

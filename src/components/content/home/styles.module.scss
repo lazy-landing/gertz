@@ -2,73 +2,30 @@
   height: 100%;
 }
 
+.map-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
 // big screen
-@media only screen and (min-width: 630px) {
-  .banner {
-    height: 150px;
-  }
-
+@media only screen and (min-width: 530px) {
   .title {
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 52px;
     max-width: 70%;
-  }
-
-  .map-wrapper {
-    display: flex;
-    justify-content: center;
-    height: 62%;
-  }
-
-  .map {
-    max-width: 500px;
-    max-height: 350px;
-    width: 80%;
   }
 }
 
 // small screen
-@media only screen and (max-width: 630px) {
-  .banner {
-    height: 150px;
-  }
-
+@media only screen and (max-width: 530px) {
   .title {
-    margin-right: auto;
-    margin-left: auto;
     width: 90%;
   }
-
-  .map-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-
-  .map {
-    max-width: 500px;
-    max-height: 350px;
-    width: 90%;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .title {
-    font-size: 52px;
-    line-height: 82px;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 70%;
-  }
-}
-
-.next-button-wrapper {
-  position: fixed;
-  bottom: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
 }

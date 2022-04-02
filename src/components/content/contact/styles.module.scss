@@ -1,65 +1,69 @@
-// big screen
-@media only screen and (min-width: 850px) {
-  .contact {
-    height: 100%;
+.contact {
+  height: 100%;
+  margin-top: 10%;
+}
+
+.address {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 15px;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+
+  & .address-section {
+    margin: 20px;
   }
 
-  form {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+  & h4 {
+    margin: 0;
   }
 
-  .input-margin {
-    margin: 0 10px 20px 10px;
-  }
-
-  .sent-email {
-    color: seagreen;
-    margin: 10px;
-    font-size: 14px;
-  }
-
-  .warning {
-    color: red;
-    margin: 0 0 0 10px;
-    font-size: 14px;
-  }
-
-  .address {
-    display: flex;
-    justify-content: center;
+  & a {
+    text-decoration: none;
     color: white;
-    font-size: 15px;
-    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
-    margin: auto;
-
-    & .address-section {
-      margin: 20px 20px 20px;
-    }
-
-    & h4 {
-      margin: 0;
-    }
-
-    & a {
-      text-decoration: none;
-      color: white;
-    }
   }
+}
+
+form {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-margin {
+  margin: 0 10px 20px 10px;
+}
+
+.sent-email {
+  color: seagreen;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.not-sent-email-error {
+  color: red;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.warning {
+  color: red;
+  margin: 0 0 0 10px;
+  font-size: 14px;
 }
 
 // small screen
 @media only screen and (max-width: 850px) {
-  .contact {
-    height: 100%;
-    padding-top: 10px;
+  .address {
+    flex-direction: column;
+
+    & .address-section {
+      margin: 5px 5px 5px 20px;
+    }
   }
 
   form {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 90%;
   }
 
   .input-margin {
@@ -67,36 +71,11 @@
   }
 
   .sent-email {
-    color: seagreen;
-    margin: 10px;
     font-size: 11px;
   }
 
   .warning {
-    color: red;
-    margin: 0 0 0 10px;
     font-size: 11px;
-  }
-
-  .address {
-    color: white;
-    font-size: 15px;
-    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
-    margin: 50px auto 10px;
-    max-width: 90%;
-
-    & div {
-      margin-bottom: 10px;
-    }
-
-    & h4 {
-      margin: 0;
-    }
-
-    & a {
-      text-decoration: none;
-      color: white;
-    }
   }
 }
 

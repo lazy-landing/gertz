@@ -17,6 +17,7 @@ const Contact = () => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 	const [emailSent, setEmailSent] = useState(false);
+	const [showEmailNotSentWarning, setShowEmailNotSentWarning] = useState(false);
 	const [showNameWarning, setShowNameWarning] = useState(false);
 	const [showEmailWarning, setShowEmailWarning] = useState(false);
 	const [showEmailNotValidWarning, setShowEmailNotValidWarning] = useState(false);
@@ -42,6 +43,14 @@ const Contact = () => {
 		if (!message) {
 			setShowMessageWarning(true);
 		}
+		if (!serviceId || !autoReplayTemplateId || !userId) {
+			setShowEmailNotSentWarning(true);
+			const id = setTimeout(() => {
+				setShowEmailNotSentWarning(false);
+				clearTimeout(id);
+			}, 10000);
+			return;
+		}
 		if (firstName && email && isValidEmail(email) && message) {
 			const templateParams = {
 				name: firstName,
@@ -50,24 +59,32 @@ const Contact = () => {
 			};
 
 			emailjs.send(serviceId, autoReplayTemplateId, templateParams, userId)
-				.catch(console.log);
-			emailjs.send(serviceId, notifyTemplateId, templateParams, userId)
-				.catch(console.log);
+				.then(() => {
+					emailjs.send(serviceId, notifyTemplateId, templateParams, userId)
+						.catch(console.log);
+					setFirstName('');
+					setLastName('');
+					setEmail('');
+					setMessage('');
+					setEmailSent(true);
+					setShowNameWarning(false);
+					setShowEmailWarning(false);
+					setShowMessageWarning(false);
+					setShowEmailNotValidWarning(false);
 
-			setFirstName('');
-			setLastName('');
-			setEmail('');
-			setMessage('');
-			setEmailSent(true);
-			setShowNameWarning(false);
-			setShowEmailWarning(false);
-			setShowMessageWarning(false);
-			setShowEmailNotValidWarning(false);
-
-			const id = setTimeout(() => {
-				setEmailSent(false);
-				clearTimeout(id);
-			}, 10000);
+					const id = setTimeout(() => {
+						setEmailSent(false);
+						clearTimeout(id);
+					}, 10000);
+				})
+				.catch((err) => {
+					setShowEmailNotSentWarning(true);
+					const id = setTimeout(() => {
+						setShowEmailNotSentWarning(false);
+						clearTimeout(id);
+					}, 10000);
+					console.error(err);
+				});
 		}
 	};
 
@@ -107,6 +124,9 @@ const Contact = () => {
 				<div className={emailSent ? styles['sent-email'] : styles.hidden}>
 					Thank you for your message, we will be in touch!
 				</div>
+				<div className={showEmailNotSentWarning ? styles['not-sent-email-error'] : styles.hidden}>
+					Something went wrong! Please try again later or contact us directly via email.
+				</div>
 				<span className={showNameWarning ? styles.warning : styles.hidden}>
 						* First name is a required field
 				</span>
@@ -126,23 +146,23 @@ const Contact = () => {
 				</div>
 				<div className={styles['contact-data']}>
 					<span className={showEmailWarning ? styles.warning : styles.hidden}>
-						* Email is a required field
+						* Your email is a required field
 					</span>
 					<span className={showEmailNotValidWarning ? styles.warning : styles.hidden}>
 						Email is not valid
 					</span>
 					<input
 						className={`${styles.input} ${styles['input-margin']}`}
-						placeholder='Email'
+						placeholder='Your email'
 						value={email}
 						onChange={onEmailChange}
 					/>
 					<span className={showMessageWarning ? styles.warning : styles.hidden}>
-						* Notes is a required field
+						* Message is a required field
 					</span>
 					<textarea
 						className={`${styles.input} ${styles['input-margin']}`}
-						placeholder='Notes'
+						placeholder='Message'
 						value={message}
 						onChange={onMessageChange}
 					/>

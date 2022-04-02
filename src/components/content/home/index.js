@@ -17,7 +17,7 @@ const Home = () => {
 	return (
 		<div ref={ref} className={styles.home}>
 			<div className={styles['map-wrapper']}>
-				<img className={styles.map} alt='Ukraine map' src={mapIcon}/>
+				<img alt='Ukraine map' src={mapIcon}/>
 			</div>
 			<div className={styles.banner}>
 				<h1 className={styles.title}>
