@@ -17,6 +17,7 @@ const Contact = () => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 	const [emailSent, setEmailSent] = useState(false);
+	const [showEmailSendingLoading, setShowEmailSendingLoading] = useState(false);
 	const [showEmailNotSentWarning, setShowEmailNotSentWarning] = useState(false);
 	const [showNameWarning, setShowNameWarning] = useState(false);
 	const [showEmailWarning, setShowEmailWarning] = useState(false);
@@ -36,7 +37,7 @@ const Contact = () => {
 		setShowEmailWarning(Boolean(!email));
 		setShowMessageWarning(Boolean(!message));
 		if (email) {
-			setShowEmailNotValidWarning(Boolean(!isValidEmail(email)));
+			setShowEmailNotValidWarning(!isValidEmail(email));
 		}
 		if (!firstName || !email || !isValidEmail(email) || !message) {
 			return;
@@ -50,6 +51,7 @@ const Contact = () => {
 			return;
 		}
 		if (firstName && email && isValidEmail(email) && message) {
+			setShowEmailSendingLoading(true);
 			const templateParams = {
 				name: firstName,
 				email,
@@ -69,6 +71,7 @@ const Contact = () => {
 					setShowEmailWarning(false);
 					setShowMessageWarning(false);
 					setShowEmailNotValidWarning(false);
+					setShowEmailSendingLoading(false);
 
 					const id = setTimeout(() => {
 						setEmailSent(false);
@@ -77,6 +80,7 @@ const Contact = () => {
 				})
 				.catch((err) => {
 					setShowEmailNotSentWarning(true);
+					setShowEmailSendingLoading(false);
 					const id = setTimeout(() => {
 						setShowEmailNotSentWarning(false);
 						clearTimeout(id);
@@ -165,10 +169,11 @@ const Contact = () => {
 						onChange={onMessageChange}
 					/>
 					<button
+						disabled={showEmailSendingLoading}
 						className={styles['input-margin']}
 						onClick={onSubmit}
 					>
-						Submit
+						{showEmailSendingLoading ? 'Email is sending...' : 'Submit'}
 					</button>
 				</div>
 			</form>

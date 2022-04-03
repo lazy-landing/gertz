@@ -92,6 +92,12 @@ form {
     color: #9f9f9f;
     align-self: center;
     width: 50%;
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #202020;
+      color: #9f9f9f;
+    }
   }
 }
 
