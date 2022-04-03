@@ -32,16 +32,14 @@ const Contact = () => {
 	const onSubmit = (e) => {
 		e.preventDefault();
 		setEmailSent(false);
-		if (!firstName) {
-			setShowNameWarning(true);
+		setShowNameWarning(Boolean(!firstName));
+		setShowEmailWarning(Boolean(!email));
+		setShowMessageWarning(Boolean(!message));
+		if (email) {
+			setShowEmailNotValidWarning(Boolean(!isValidEmail(email)));
 		}
-		if (!email) {
-			setShowEmailWarning(true);
-		} else if (!isValidEmail(email)) {
-			setShowEmailNotValidWarning(true);
-		}
-		if (!message) {
-			setShowMessageWarning(true);
+		if (!firstName || !email || !isValidEmail(email) || !message) {
+			return;
 		}
 		if (!serviceId || !autoReplayTemplateId || !userId) {
 			setShowEmailNotSentWarning(true);

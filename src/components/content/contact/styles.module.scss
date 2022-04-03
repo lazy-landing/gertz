@@ -52,33 +52,6 @@ form {
   font-size: 14px;
 }
 
-// small screen
-@media only screen and (max-width: 850px) {
-  .address {
-    flex-direction: column;
-
-    & .address-section {
-      margin: 5px 5px 5px 20px;
-    }
-  }
-
-  form {
-    width: 90%;
-  }
-
-  .input-margin {
-    margin: 3px;
-  }
-
-  .sent-email {
-    font-size: 11px;
-  }
-
-  .warning {
-    font-size: 11px;
-  }
-}
-
 .hidden {
   display: none;
 }
@@ -116,28 +89,71 @@ form {
     font-size: 14px;
     border: none;
     background-clip: padding-box;
-    background-color: #131313;
     color: #9f9f9f;
     align-self: center;
     width: 50%;
-
-    &:hover {
-      background-color: #202020;
-    }
   }
 }
 
 .input {
   padding: 0 10px;
   border-radius: 4px;
-  background-color: #131313;
   box-shadow: 0 0 0 1px rgb(28 28 28 / 50%);
-  color: white;
   font-size: 14px;
   border: none;
 }
 
-.input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 100px #131313 inset;
-  -webkit-text-fill-color: white;
+// big screen
+@media only screen and (min-width: 550px) {
+  .input {
+    padding: 0 10px;
+    border-radius: 4px;
+    background-color: #131313;
+    box-shadow: 0 0 0 1px rgb(28 28 28 / 50%);
+    color: white;
+    font-size: 14px;
+    border: none;
+  }
+
+  .input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px #131313 inset;
+    -webkit-text-fill-color: white;
+  }
+
+  .contact-data {
+    button {
+      background-color: #131313;
+
+      &:hover {
+        background-color: #202020;
+      }
+    }
+  }
+}
+
+// small screen
+@media only screen and (max-width: 550px) {
+  .address {
+    flex-direction: column;
+
+    & .address-section {
+      margin: 5px 5px 5px 20px;
+    }
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .input-margin {
+    margin: 3px;
+  }
+
+  .sent-email {
+    font-size: 11px;
+  }
+
+  .warning {
+    font-size: 11px;
+  }
 }
