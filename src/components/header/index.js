@@ -33,6 +33,12 @@ const Header = () => {
 				>
 					Contact Us
 				</button>
+				<button
+					className={`${styles.button} ${getActiveButtonStyle('/partners')}`}
+					onClick={() => navigate('/partners')}
+				>
+					Login for partners
+				</button>
 			</div>
 		</div>
 	);
