@@ -35,7 +35,6 @@
 
   &:disabled {
     cursor: not-allowed;
-    background-color: #202020;
     color: #9f9f9f;
   }
 }
@@ -92,5 +91,11 @@
 
   .warning {
     font-size: 11px;
+  }
+
+  .button {
+    &:disabled {
+      background-color: white;
+    }
   }
 }
