@@ -1,10 +1,9 @@
 .contact {
   height: 100%;
-  margin-top: 10%;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .form {
@@ -47,6 +46,29 @@
   border: none;
   width: 100%;
   line-height: 48px;
+}
+
+.error-container {
+  padding: 10px;
+  margin: 10px;
+  background: #fafafa;
+  border: 1px solid #ccc;
+}
+
+.user-warning {
+  color: #ba3939;
+  margin: 0 0 0 10px;
+  font-size: 14px;
+}
+
+.warning {
+  color: red;
+  margin: 0 0 0 10px;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
 }
 
 // big screen
@@ -98,4 +120,13 @@
       background-color: white;
     }
   }
+
+  .user-warning {
+    font-size: 11px;
+  }
+
+  .warning {
+    font-size: 11px;
+  }
 }
+
